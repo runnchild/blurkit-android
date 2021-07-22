@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.content.ContextWrapper;
 
 import java.lang.ref.WeakReference;
 
@@ -301,12 +302,22 @@ public class BlurLayout extends FrameLayout {
     private View getActivityView() {
         Activity activity;
         try {
-            activity = (Activity) getContext();
+            activity = getActivity(getContext());
         } catch (ClassCastException e) {
             return null;
         }
 
         return activity.getWindow().getDecorView().findViewById(android.R.id.content);
+    }
+        
+    private Activity getActivity(Context context) {
+        while (context instanceof ContextWrapper) {
+            if (context instanceof Activity) {
+                return (Activity) context;
+            }
+            context = ((ContextWrapper) context).getBaseContext();
+        }
+        return null;
     }
 
     /**
