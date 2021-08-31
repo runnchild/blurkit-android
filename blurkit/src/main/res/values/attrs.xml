@@ -7,6 +7,9 @@
         <attr name="blk_fps" format="integer" />
         <attr name="blk_cornerRadius" format="dimension" />
         <attr name="blk_alpha" format="float" />
+        <attr name="blk_front_ground" format="color" />
+        <attr name="blk_back_ground" format="color" />
+        <attr name="blk_targetViewId" format="integer" />
     </declare-styleable>
 
 </resources>

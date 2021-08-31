@@ -1,6 +1,6 @@
 plugins {
-    id 'com.android.library'
-    id 'com.github.dcendents.android-maven' version '1.5'
+    id 'com.rongc.lib'
+//    id 'com.github.dcendents.android-maven' version '1.5'
 }
 
 ext {
@@ -43,14 +43,14 @@ dependencies {
 
 }
 
-install {
-    repositories.mavenInstaller {
-        pom.project {
-            groupId project.group
-            artifactId 'blurkit'
-            packaging 'aar'
-        }
-    }
-}
+//install {
+//    repositories.mavenInstaller {
+//        pom.project {
+//            groupId project.group
+//            artifactId 'blurkit'
+//            packaging 'aar'
+//        }
+//    }
+//}
 
 apply from : 'deploy.gradle'
