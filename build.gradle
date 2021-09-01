@@ -29,8 +29,8 @@ allprojects { project ->
     ext {
         versions = [
                 minSdk      : 19,
-                targetSdk   : 28,
-                compileSdk  : 28,
+                targetSdk   : 30,
+                compileSdk  : 30,
         ]
     }
 }
